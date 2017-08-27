@@ -1,4 +1,4 @@
-class Product{
+export class Product{
   constructor(
     public sku: string,
     public name: string,

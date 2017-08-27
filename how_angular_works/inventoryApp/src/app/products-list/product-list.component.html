@@ -1,3 +1,8 @@
 <div class="ui items">
-  products will be here
+  <product-row
+  *ngFor="let x of productList">
+  [product] = "x"
+    (click)='clicked(x)'
+
+  </product-row>
 </div>

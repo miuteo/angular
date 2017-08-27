@@ -17,4 +17,15 @@
     <h2><a target="_blank" href="https://blog.angular.io//">Angular blog</a></h2>
   </li>
 </ul>
+<products-list
+[productList]="products"
+(onProductSelected) ="productWasSelected($event)"
+></products-list>
+<!--<div class="inventory-app">-->
+<!--<products-list-->
+  <!--[productList]="products" &lt;!&ndash;input &ndash;&gt;-->
+ <!--onProductSelected="productWasSelected($event)"-->
+  <!--&gt; &lt;!&ndash;output &ndash;&gt;-->
+<!--</products-list>-->
+<!--</div>-->
 

@@ -1,8 +1,8 @@
 <div class="ui items">
   <product-row
-  *ngFor="let x of productList">
+  *ngFor="let x of productList"
   [product] = "x"
     (click)='clicked(x)'
-
+>
   </product-row>
 </div>

@@ -7,6 +7,9 @@ import {ProductRowComponent} from './product-row/product-row.component';
 import {Counter} from "./component-outputs/counter.model";
 import {SingleComponent} from "./component-outputs/single-component";
 import {ClubComponent} from "./component-outputs/club-component";
+import {ProductImage} from "./product-image/ProductImage";
+import {ProductDepartment} from "./product-department/ProductDepartment";
+import {PriceDisplay} from "./price-display/price-display";
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import {ClubComponent} from "./component-outputs/club-component";
     ProductRowComponent,
     Counter,
     SingleComponent,
-    ClubComponent
+    ClubComponent,
+    ProductImage,
+    ProductDepartment,
+    PriceDisplay
   ],
   imports: [
     BrowserModule

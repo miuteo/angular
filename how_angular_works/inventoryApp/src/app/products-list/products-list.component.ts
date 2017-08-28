@@ -4,12 +4,14 @@ import {Product} from '../product.model';
 @Component({
   selector:'products-list',
   // inputs:['productList'],
-  outputs:['onProductSelected'],
+  // outputs:['onProductSelected'],
   templateUrl:'./product-list.component.html'
 })
 export class ProductsListComponent{
-   @Input() productList : Product[];
+
+  @Input() productList : Product[];
   @Output() onProductSelected : EventEmitter<Product>;
+  productsSelected : Product[] = [];
 
    private currentProduct : Product;
 
@@ -22,10 +24,17 @@ export class ProductsListComponent{
      }
      return product.sku === this.currentProduct.sku;
    }
+    alreadySelected(product :Product): boolean{
+
+    return this.productsSelected.includes(product);
+  }
 
    clicked(product : Product) :void{
      this.currentProduct = product;
      this.onProductSelected.emit(product);
+     if(!this.productsSelected.includes(product)){
+       this.productsSelected.push(product);
+     }
    }
 
 }

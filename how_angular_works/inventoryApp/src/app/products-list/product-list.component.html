@@ -3,6 +3,10 @@
   *ngFor="let x of productList"
   [product] = "x"
     (click)='clicked(x)'
+  [class.selected]="isSelected(x)"
+  [class.alreadySelected]="alreadySelected(x)"
+
 >
+    <!-- [class.alreadySelected]="alreadySelected(x) just for fun -->
   </product-row>
 </div>

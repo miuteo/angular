@@ -10,6 +10,7 @@ import {ClubComponent} from "./component-outputs/club-component";
 import {ProductImage} from "./product-image/ProductImage";
 import {ProductDepartment} from "./product-department/ProductDepartment";
 import {PriceDisplay} from "./price-display/price-display";
+import {NgSwitchExample} from './ng_switch';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {PriceDisplay} from "./price-display/price-display";
     ClubComponent,
     ProductImage,
     ProductDepartment,
-    PriceDisplay
+    PriceDisplay,
+    NgSwitchExample
   ],
   imports: [
     BrowserModule

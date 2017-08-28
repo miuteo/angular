@@ -12,6 +12,7 @@ import { Product } from './product.model';
 })
 export class AppComponent {
   title = 'app';
+  var = 'A';
   products :Product[];
   constructor(){
       this.products = [

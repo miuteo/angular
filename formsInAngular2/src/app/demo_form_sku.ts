@@ -14,6 +14,7 @@ import {Component} from "@angular/core";
                id="skuInput"
                placeholder="SKU"
                name="SKU"
+               ngModel
         >
       </div>
       
@@ -22,7 +23,7 @@ import {Component} from "@angular/core";
   </div>`
 })
 export class Demo_form_sku{
-  onSubmit(object){
-    console.log(`object value=`,object.value)
+  onSubmit(object:any){
+    console.log(`object value=`,object)
   }
 }

@@ -38,9 +38,9 @@ export class DemoFormWithCustomValidation{
   }
 
   skuValidator(control: FormControl):{[s:string]:boolean}{
-    console.log(control.value+!control.value.match(/123*/));
-    if(!control.value.match(/['123']*/))
-      return {invalidSku: true};//TODO
+    console.log(control.value+!control.value.match(/^123/));
+    if(!control.value.match(/^123/))
+      return {invalidSku: true};
   }
 
 }

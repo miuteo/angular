@@ -1,10 +1,10 @@
 import {Component} from "@angular/core";
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
-  selector : 'demo-form-with-custom-validation',
+  selector : 'demo-form-with-event',
   template : `<div class="ui raised segment">
-    <h2 class="ui header">Demo form with custom validation </h2>
+    <h2 class="ui header">Demo form with event </h2>
     <form class="ui form" [formGroup]="myForm"
         (ngSubmit)="onSubmit(myForm.value)">
       <div class="field" [class.error]="!myForm.controls['sku'].valid && myForm.touched">
@@ -25,13 +25,24 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
     </form>
   </div>`
 })
-export class DemoFormWithCustomValidation{
+export class DemoFormWithEvent{
   myForm : FormGroup;
 
   constructor(fb:FormBuilder){
     this.myForm = fb.group({
       'sku':['',Validators.compose([Validators.required,Validators.min(10),this.skuValidator])]
     });
+     let sku:AbstractControl  = this.myForm.controls['sku'];
+     sku.valueChanges.subscribe(
+       (value:String) =>{console.log(`sku changed to `,value)}
+     );
+
+     this.myForm.valueChanges.subscribe(
+       (form : any)=>{
+         console.log(`form changed to `,form);
+       }
+     );
+
   }
   onSubmit(object:any){
     console.log(`object value=`,object);

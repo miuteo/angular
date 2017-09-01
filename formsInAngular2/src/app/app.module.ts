@@ -9,6 +9,7 @@ import {DemoFormWithValidation} from './demo_form_with_validation';
 import {DemoFormWithValidationShorthand} from "./demo_form_with_validations_shorthand";
 import {DemoFormWithCustomValidation} from './demo_form_with_custom_validation';
 import {DemoFormWithEvent} from './demo_form_with_event';
+import {DemoFormNgModel} from "./demo_form_ng_model";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {DemoFormWithEvent} from './demo_form_with_event';
     DemoFormWithValidation,
     DemoFormWithValidationShorthand,
     DemoFormWithCustomValidation,
-    DemoFormWithEvent
+    DemoFormWithEvent,
+    DemoFormNgModel
   ],
   imports: [
     BrowserModule,

@@ -4,11 +4,11 @@ import {SearchResult} from "./SearchResult";
 import { Observable } from 'rxjs/Rx';
 
 
-
-export var YOUTUBE_API_KEY: string = 'AIzaSyDOfT_BO81aEZScosfTYMruJobmpjqNeEk';
+export var YOUTUBE_API_KEY: string = 'AIzaSyBbk9y5X2uC6N_9Am3I4TSM7rt66Yt-7Vg';
 export var YOUTUBE_API_URL: string =
   'https://www.googleapis.com/youtube/v3/search';
-
+declare var require: any
+let loadingGif: string = ((<any>window).__karma__)?'':require('./images/loading.gif');
 @Injectable()
 export class YouTubeService{
   constructor(private http: Http,
@@ -22,7 +22,7 @@ export class YouTubeService{
         `key=${this.apiKey}`,
         `part=snippet`,
         `type=video`,
-        `maxResults=10`
+        `maxResults=12`
       ].join('&')
     let queryURL: string = `${this.apiURL}?${params}`;
 
@@ -31,10 +31,11 @@ export class YouTubeService{
       .map((response: Response) => {
           return (<any>response.json()).items.map(
             item =>{
-              console.log(`raw item`,item);
+              // console.log(`raw item`,item);
+              console.log(item.snippet.title)
               return new SearchResult({
                 id: item.id.videoId,
-                title: item.snippet.title,
+                title: item.snippet.title.length>30? item.snippet.title.substring(0,27)+'...':item.snippet.title,
                 description: item.snippet.description,
                 thumbnailUrl: item.snippet.thumbnails.high.url
               })
@@ -115,14 +116,14 @@ export class SearchResultComponent{
         <h1>Youtube Search
         <img style="float:right"
              *ngIf="loading"
-             ng-src='./app/images/loading.gif'/>
+             src='${loadingGif}'/>
         </h1>
       </div>
     
       <div class="row">
         <div class="input-group input-group-lg col-md-12">
              <search-box
-                (loading)="loading = $event"
+                (loading)="loading =($event)"
                 (results)="updateResults($event)"></search-box>
         </div>
       </div>
@@ -138,8 +139,12 @@ export class SearchResultComponent{
 })
 export class YouTubeSearchComponent{
   results: SearchResult[];
-  loadingGif:"";
+  // loading;
   updateResults(results: SearchResult[]){
     this.results = results;
+  }
+  varLoadingF(anything){
+    console.log(`loading value=`,anything);
+    // this.loading = anything;
   }
 }

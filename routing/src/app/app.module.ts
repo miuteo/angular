@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {Http} from '@angular/http';
+import {Http, HttpModule} from '@angular/http';
 import { AppComponent } from './app.component';
 import {HomeComponent} from "./HomeComponent";
 import {AboutComponent} from "./AboutComponent";
@@ -25,7 +25,7 @@ import {SpotifyService} from "./sportify/spotifyService";
   ],
   imports: [
     BrowserModule,
-    Http,
+    HttpModule,
     RouterModule.forRoot(routes)
   ],
   providers: [

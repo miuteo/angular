@@ -3,6 +3,7 @@ import {Routes} from "@angular/router";
 import {HomeComponent} from "./HomeComponent";
 import {AboutComponent} from "./AboutComponent";
 import {ContactComponent} from "./ContactComponent";
+import {SearchComponent} from "./sportify/SearchComponent";
 
 @Component({
   selector: 'router-app',
@@ -30,5 +31,6 @@ export const routes: Routes=[
   {path: 'home',component: HomeComponent},
   {path: 'about',component:AboutComponent},
   {path: 'contact', component: ContactComponent},
-  {path: 'contactus',redirectTo:'contact'}
+  {path: 'contactus',redirectTo:'contact'},
+  {path: 'search',component:SearchComponent}
 ];

@@ -85,12 +85,15 @@ export class SearchComponent implements OnInit{
 
   renderResults(res:any) :void{
     this.results = null;
-    if(res && res.tracks && res.tracks.item){
+    console.log(`res=`,res)
+    if(res && res.tracks && res.tracks.items){
       this.results = res.tracks.items;
+      console.log(`res=`,res.tracks.items)
     }
   }
 
   ngOnInit(): void{
+    console.log(`queryyy`,this.query)
     this.search();
   }
 }

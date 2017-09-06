@@ -10,7 +10,7 @@ import {RoutesDemoApp} from "./RoutesDemoApp";
 import {routes} from "./RoutesDemoApp";
 import {APP_BASE_HREF, HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {SearchComponent} from "./sportify/SearchComponent";
-import {SpotifyService} from "./sportify/spotifyService";
+import {sporifyServiceInjectables, SpotifyService} from './sportify/spotifyService';
 
 
 
@@ -30,7 +30,7 @@ import {SpotifyService} from "./sportify/spotifyService";
   ],
   providers: [
     {provide: APP_BASE_HREF,useValue: '/'},
-    SpotifyService],
+    sporifyServiceInjectables],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
-import {SpotifyService} from "./spotifyService";
+import {SpotifyService} from "./SpotifyService";
 
 @Component({
   selector: 'track',

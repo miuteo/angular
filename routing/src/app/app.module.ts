@@ -11,6 +11,8 @@ import {routes} from "./RoutesDemoApp";
 import {APP_BASE_HREF, HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {SearchComponent} from "./sportify/SearchComponent";
 import {sporifyServiceInjectables, SpotifyService} from './sportify/spotifyService';
+import {TrackComponent} from "./sportify/TrackComponent";
+import {SportifyComponent} from "./sportify/SportifyComponent";
 
 
 
@@ -21,7 +23,9 @@ import {sporifyServiceInjectables, SpotifyService} from './sportify/spotifyServi
     AboutComponent,
     ContactComponent,
     RoutesDemoApp,
-    SearchComponent
+    SearchComponent,
+    TrackComponent,
+    SportifyComponent
   ],
   imports: [
     BrowserModule,

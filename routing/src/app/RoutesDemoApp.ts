@@ -4,6 +4,7 @@ import {HomeComponent} from "./HomeComponent";
 import {AboutComponent} from "./AboutComponent";
 import {ContactComponent} from "./ContactComponent";
 import {SearchComponent} from "./sportify/SearchComponent";
+import {TrackComponent} from "./sportify/TrackComponent";
 
 @Component({
   selector: 'router-app',
@@ -17,7 +18,7 @@ import {SearchComponent} from "./sportify/SearchComponent";
       </ul>
     </nav>
 
-    <!--<router-outlet></router-outlet>-->
+
   </div>
   <router-outlet></router-outlet>
   `
@@ -27,10 +28,12 @@ export class RoutesDemoApp{
 }
 
 export const routes: Routes=[
-  {path:'',redirectTo:'home',pathMatch:'full' },
-  {path: 'home',component: HomeComponent},
-  {path: 'about',component:AboutComponent},
-  {path: 'contact', component: ContactComponent},
-  {path: 'contactus',redirectTo:'contact'},
-  {path: 'search',component:SearchComponent}
+  // {path:'',redirectTo:'search',pathMatch:'full' },
+  {path: 'demo-routing/home',component: HomeComponent},
+  {path: 'demo-routing/about',component:AboutComponent},
+  {path: 'demo-routing/contact', component: ContactComponent},
+  {path: 'demo-routing/contactus',redirectTo:'demo-routing/contact'},
+  {path: 'search',component:SearchComponent},
+  {path:'tracks/:id',component:TrackComponent},
+  {path:'demo-routing',component:RoutesDemoApp}
 ];

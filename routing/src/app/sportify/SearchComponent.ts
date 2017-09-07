@@ -54,6 +54,7 @@ import {ActivatedRoute, Router} from "@angular/router";
       </div>
       
     </div>
+    
   `
 })
 export class SearchComponent implements OnInit{
@@ -79,7 +80,7 @@ export class SearchComponent implements OnInit{
     if(!this.query)return;
 
     this.spotify
-      .searchByTrack(this.query)
+      .searchTrack(this.query)
       .subscribe((res:any)=>this.renderResults(res));
   }
 

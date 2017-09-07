@@ -1,8 +1,8 @@
 import {Component} from "@angular/core";
 import {Routes} from "@angular/router";
-import {HomeComponent} from "./HomeComponent";
-import {AboutComponent} from "./AboutComponent";
-import {ContactComponent} from "./ContactComponent";
+import {HomeComponent} from "./demo_route/HomeComponent";
+import {AboutComponent} from "./demo_route/AboutComponent";
+import {ContactComponent} from "./demo_route/ContactComponent";
 import {SearchComponent} from "./sportify/SearchComponent";
 import {TrackComponent} from "./sportify/TrackComponent";
 

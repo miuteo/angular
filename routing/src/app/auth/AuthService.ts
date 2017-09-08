@@ -18,3 +18,7 @@ export class AuthService{
     return this.getUser() !==null;
   }
 }
+
+export var AUTH_PROVIDERS: Array<any> = [
+  {provide: AuthService,useClass: AuthService}
+];

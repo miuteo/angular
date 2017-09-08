@@ -13,7 +13,11 @@ import {SearchComponent} from "./sportify/SearchComponent";
 import {sporifyServiceInjectables, SpotifyService} from './sportify/SpotifyService';
 import {TrackComponent} from "./sportify/TrackComponent";
 import {SportifyComponent} from "./sportify/SportifyComponent";
-
+import {LoginComponent} from "./auth/LoginComponent";
+import {ProtectedComponent} from "./auth/ProtectedComponent";
+import {LoggedInGuard} from "./auth/LoggedInGuard";
+import {AUTH_PROVIDERS} from "./auth/AuthService";
+import {RouterDemoApp} from "./auth/RouterDemoApp";
 
 
 @NgModule({
@@ -25,7 +29,10 @@ import {SportifyComponent} from "./sportify/SportifyComponent";
     RoutesDemoApp,
     SearchComponent,
     TrackComponent,
-    SportifyComponent
+    SportifyComponent,
+    LoginComponent,
+    ProtectedComponent,
+    RouterDemoApp
   ],
   imports: [
     BrowserModule,
@@ -34,7 +41,9 @@ import {SportifyComponent} from "./sportify/SportifyComponent";
   ],
   providers: [
     {provide: APP_BASE_HREF,useValue: '/'},
-    sporifyServiceInjectables],
+    sporifyServiceInjectables,
+    AUTH_PROVIDERS,
+    LoggedInGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

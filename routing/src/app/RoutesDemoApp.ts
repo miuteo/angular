@@ -5,6 +5,9 @@ import {AboutComponent} from "./demo_route/AboutComponent";
 import {ContactComponent} from "./demo_route/ContactComponent";
 import {SearchComponent} from "./sportify/SearchComponent";
 import {TrackComponent} from "./sportify/TrackComponent";
+import {ProtectedComponent} from "./auth/ProtectedComponent";
+import {LoggedInGuard} from "./auth/LoggedInGuard";
+import {RouterDemoApp} from "./auth/RouterDemoApp";
 
 @Component({
   selector: 'router-app',
@@ -35,5 +38,7 @@ export const routes: Routes=[
   {path: 'demo-routing/contactus',redirectTo:'demo-routing/contact'},
   {path: 'search',component:SearchComponent},
   {path:'tracks/:id',component:TrackComponent},
-  {path:'demo-routing',component:RoutesDemoApp}
+  {path:'demo-routing',component:RoutesDemoApp},
+  {path:'auth',component:RouterDemoApp},
+  {path:'auth/protected',component:ProtectedComponent,canActivate:[LoggedInGuard]}
 ];
